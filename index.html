@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>One Piece Tango - Logic Puzzle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-body: #F0F2F5;
+      --bg-container: rgba(255,255,255,.95);
+      --bg-board: #E2E8F0;
+      --bg-cell: #FFFFFF;
+      --bg-cell-prefilled: #FEF3C7;
+      --bg-cell-error: #FEE2E2;
+      --border-cell: #CBD5E1;
+      --border-cell-prefilled: #FBBF24;
+      --border-cell-error: #F87171;
+      --text-title: #1a202c;
+      --text-body: #4a5568;
+      --text-stat: #4C51BF;
+      --shadow-container: 0 10px 30px rgba(0,0,0,.1);
+      --shadow-button: 0 2px 6px rgba(0,0,0,.1);
+    }
+    html.dark {
+      --bg-body: #1A202C;
+      --bg-container: rgba(26,32,44,.95);
+      --bg-board: #2D3748;
+      --bg-cell: #4A5568;
+      --bg-cell-prefilled: #B7791F;
+      --bg-cell-error: #9B2C2C;
+      --border-cell: #718096;
+      --border-cell-prefilled: #D69E2E;
+      --border-cell-error: #E53E3E;
+      --text-title: #E2E8F0;
+      --text-body: #A0AEC0;
+      --text-stat: #90CDF4;
+      --shadow-container: 0 10px 30px rgba(0,0,0,.3);
+      --shadow-button: 0 2px 6px rgba(0,0,0,.3);
+    }
+    body {
+      touch-action: manipulation;
+    }
+    @keyframes errorShake { 
+      0%,100%{transform:translateX(0)} 20%{transform:translateX(-5px)} 40%{transform:translateX(5px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} 
+    }
+    .animate-error-shake { animation: errorShake .4s ease-in-out; }
+    @keyframes hintPulse { 
+      0%,100%{transform:scale(1); box-shadow: 0 0 0 3px rgba(245,158,11,.25)} 50%{transform:scale(1.05); box-shadow: 0 0 0 6px rgba(245,158,11,.35)} 
+    }
+    .animate-hint-pulse { animation: hintPulse 1.5s ease-in-out infinite; }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^19.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/"
+    }
+  }
+  </script>
+</head>
+<body class="bg-gray-200 dark:bg-gray-900">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
