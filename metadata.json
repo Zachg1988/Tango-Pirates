@@ -1,5 +1,5 @@
 {
-  "name": "Copy of One Piece Tango - Logic Puzzle",
+  "name": "One Piece Tango - Logic Puzzle",
   "description": "A challenging 6x6 logic puzzle with a 'One Piece' theme. Place Pirate and Marine symbols correctly based on connector clues (= for same, x for different) and logical rules: exactly three of each symbol per row/column, no more than two identical symbols consecutively, and no two rows or columns can be the same.",
   "requestFramePermissions": []
 }

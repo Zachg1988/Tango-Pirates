@@ -1,23 +1,13 @@
 
-export type CellValue = 0 | 1 | 2; // 0: Empty, 1: Pirate, 2: Marine
-export type BoardState = CellValue[];
+export type CellValue = 0 | 1 | 2; // 0: empty, 1: pirate, 2: marine
+export type Board = CellValue[][];
 
-export type Connector = [number, number, '=' | 'x'];
-export type Prefilled = { i: number; v: CellValue };
+export interface Puzzle {
+  initial: Board;
+  solution: Board;
+}
 
-export type Level = {
-  name: string;
-  difficulty: 'easy' | 'medium' | 'hard' | 'expert';
-  prefilled: Prefilled[];
-  connectors: Connector[];
-};
-
-export type ErrorCell = {
-  index: number;
-  message: string;
-};
-
-export type Hint = {
-  index: number;
-  message: string;
-};
+export interface Coords {
+  row: number;
+  col: number;
+}

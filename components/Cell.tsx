@@ -1,6 +1,7 @@
 
 import React from 'react';
-import type { CellValue } from '../types';
+// Fix: Explicitly added .ts extension to the import to resolve module error.
+import type { CellValue } from '../types.ts';
 
 interface CellProps {
   value: CellValue;

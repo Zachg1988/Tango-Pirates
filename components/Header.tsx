@@ -1,28 +1,26 @@
 
 import React from 'react';
-import { ThemeIcon } from './icons';
+import { HelpIcon } from './icons.tsx';
 
 interface HeaderProps {
-  onToggleTheme: () => void;
-  theme: 'light' | 'dark';
+    onShowInstructions: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onToggleTheme, theme }) => {
-  return (
-    <header className="text-center mb-4 relative">
-      <h1 className="text-3xl sm:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500">
-        ⚓ One Piece Tango ⚓
-      </h1>
-      <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400">Master the Grand Line Puzzle</p>
-      <button 
-        onClick={onToggleTheme} 
-        className="absolute top-0 right-0 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-        aria-label="Toggle theme"
-      >
-        <ThemeIcon theme={theme} />
-      </button>
-    </header>
-  );
+const Header: React.FC<HeaderProps> = ({ onShowInstructions }) => {
+    return (
+        <header className="flex justify-between items-center mb-4 p-2 rounded-lg bg-opacity-20">
+            <h1 className="text-2xl sm:text-4xl font-black tracking-tighter text-[var(--text-title)]">
+                Pirates vs Marines
+            </h1>
+            <button
+                onClick={onShowInstructions}
+                className="p-2 rounded-full text-[var(--text-button)] bg-[var(--bg-button)] hover:bg-[var(--bg-button-hover)] transition-colors"
+                aria-label="Show instructions"
+            >
+                <HelpIcon className="w-6 h-6" />
+            </button>
+        </header>
+    );
 };
 
 export default Header;
